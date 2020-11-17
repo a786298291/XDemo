@@ -20,7 +20,7 @@ import java.io.InputStream;
 public class DemoApplication {
 
     public static void main(String[] args) {
-        String resource = "config/mybatis-config";
+        /*String resource = "config/mybatis-config";
         try {
             InputStream resourceAsStream = Resources.getResourceAsStream(resource);
             SqlSessionFactory sqlSessionFactory = new SqlSessionFactoryBuilder().build(resourceAsStream);
@@ -30,8 +30,8 @@ public class DemoApplication {
             System.out.println(video);
         } catch (IOException e) {
             e.printStackTrace();
-        }
-       // SpringApplication.run(DemoApplication.class, args);
+        }*/
+        SpringApplication.run(DemoApplication.class, args);
     }
 
 }
