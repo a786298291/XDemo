@@ -3,10 +3,13 @@ package cool.suzi.demo.domain;
 import java.util.Date;
 
 public class User {
+    private Integer id;
     private String name;
     private String password;
     private Date createTime;
     private String token;
+    private String headImg;
+    private String phone;
 
     public User() {
     }
@@ -49,13 +52,40 @@ public class User {
         this.createTime = createTime;
     }
 
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
+    public String getHead_img() {
+        return headImg;
+    }
+
+    public void setHead_img(String head_img) {
+        this.headImg = head_img;
+    }
+
+    public String getPhone() {
+        return phone;
+    }
+
+    public void setPhone(String phone) {
+        this.phone = phone;
+    }
+
     @Override
     public String toString() {
         return "User{" +
-                "name='" + name + '\'' +
+                "id=" + id +
+                ", name='" + name + '\'' +
                 ", password='" + password + '\'' +
                 ", createTime=" + createTime +
                 ", token='" + token + '\'' +
+                ", head_img='" + headImg + '\'' +
+                ", phone='" + phone + '\'' +
                 '}';
     }
 }

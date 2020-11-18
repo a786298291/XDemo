@@ -6,5 +6,5 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface VideoDao {
-    public Video findById(@Param("video_id") int id);
+    public Video findById(@Param("video_id") Integer id);
 }

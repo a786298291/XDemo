@@ -4,15 +4,25 @@ import org.springframework.util.StringUtils;
 
 import java.util.Date;
 
+/**
+ * id	int
+ * title	varchar
+ * summary	varchar
+ * cover_img	varchar
+ * price	int
+ * create_time	datetime
+ * point	double
+ */
 public class Video {
     private int id;
     private String title;
     private String summary;
-    private String cover_img;
+    private String coverImg;
     private int price;
-    private Date create_time;
-    private int c_id;
+    private Date createTime;
+    private int cid;
     private  double point;
+    private Chapter chapter;
 
     public int getId() {
         return id;
@@ -39,11 +49,11 @@ public class Video {
     }
 
     public String getCover_img() {
-        return cover_img;
+        return coverImg;
     }
 
     public void setCover_img(String cover_img) {
-        this.cover_img = cover_img;
+        this.coverImg = cover_img;
     }
 
     public int getPrice() {
@@ -55,19 +65,19 @@ public class Video {
     }
 
     public Date getCreate_time() {
-        return create_time;
+        return createTime;
     }
 
     public void setCreate_time(Date create_time) {
-        this.create_time = create_time;
+        this.createTime = create_time;
     }
 
     public int getC_id() {
-        return c_id;
+        return cid;
     }
 
     public void setC_id(int c_id) {
-        this.c_id = c_id;
+        this.cid = c_id;
     }
 
     public double getPoint() {
@@ -84,11 +94,20 @@ public class Video {
                 "id=" + id +
                 ", title='" + title + '\'' +
                 ", summary='" + summary + '\'' +
-                ", cover_img='" + cover_img + '\'' +
+                ", coverImg='" + coverImg + '\'' +
                 ", price=" + price +
-                ", create_time=" + create_time +
-                ", c_id=" + c_id +
+                ", createTime=" + createTime +
+                ", cid=" + cid +
                 ", point=" + point +
+                ", chapter=" + chapter +
                 '}';
+    }
+
+    public Chapter getChapter() {
+        return chapter;
+    }
+
+    public void setChapter(Chapter chapter) {
+        this.chapter = chapter;
     }
 }
