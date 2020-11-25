@@ -1,6 +1,7 @@
 package cool.suzi.demo.domain;
 
 import java.util.Date;
+import java.util.List;
 
 /**
  *   -章-
@@ -17,7 +18,7 @@ public class Chapter {
     private String title;
     private Integer ordered; //订单数量
     private Date createTime;  //创建时间
-    private Episode episode;
+    private List<Episode> episode;
 
     public Integer getId() {
         return id;
@@ -59,11 +60,11 @@ public class Chapter {
         this.createTime = datetime;
     }
 
-    public Episode getEpisode() {
+    public List<Episode> getEpisode() {
         return episode;
     }
 
-    public void setEpisode(Episode episode) {
+    public void setEpisode(List<Episode> episode) {
         this.episode = episode;
     }
 

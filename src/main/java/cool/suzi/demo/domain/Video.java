@@ -3,6 +3,7 @@ package cool.suzi.demo.domain;
 import org.springframework.util.StringUtils;
 
 import java.util.Date;
+import java.util.List;
 
 /**
  * id	int
@@ -22,7 +23,7 @@ public class Video {
     private Date createTime;
     private int cid;
     private  double point;
-    private Chapter chapter;
+    private List<Chapter> chapter;
 
     public int getId() {
         return id;
@@ -103,11 +104,11 @@ public class Video {
                 '}';
     }
 
-    public Chapter getChapter() {
+    public List<Chapter> getChapter() {
         return chapter;
     }
 
-    public void setChapter(Chapter chapter) {
+    public void setChapter(List<Chapter> chapter) {
         this.chapter = chapter;
     }
 }

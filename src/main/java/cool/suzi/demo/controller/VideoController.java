@@ -35,6 +35,8 @@ public class VideoController {
     public JsonData listVideo(){
 
         List<Video> listVideo = videoService.listVideo();
+        
         return JsonData.buildSuccess(listVideo);
     }
+
 }
