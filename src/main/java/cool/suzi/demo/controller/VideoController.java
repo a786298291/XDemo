@@ -1,6 +1,7 @@
 package cool.suzi.demo.controller;
 
 import cool.suzi.demo.domain.Video;
+import cool.suzi.demo.domain.VideoBanner;
 import cool.suzi.demo.service.VideoService;
 import cool.suzi.demo.util.JsonData;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,9 +18,23 @@ public class VideoController {
 
 
     @RequestMapping("/findVideo")
-    public JsonData listVideo(){
+    public JsonData findVideo(){
 
         Video video = videoService.findVideoById(30);
         return JsonData.buildSuccess(video);
+    }
+
+    @RequestMapping("/listVideoBanner")
+    public JsonData listVideoBanner(){
+
+        List<VideoBanner> listVideoBanner = videoService.listVideoBanner();
+        return JsonData.buildSuccess(listVideoBanner);
+    }
+
+    @RequestMapping("/listVideo")
+    public JsonData listVideo(){
+
+        List<Video> listVideo = videoService.listVideo();
+        return JsonData.buildSuccess(listVideo);
     }
 }

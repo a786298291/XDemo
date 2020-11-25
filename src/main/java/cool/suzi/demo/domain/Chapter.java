@@ -16,7 +16,7 @@ public class Chapter {
     private Integer videoId;
     private String title;
     private Integer ordered; //订单数量
-    private Date datetime;  //创建时间
+    private Date createTime;  //创建时间
     private Episode episode;
 
     public Integer getId() {
@@ -52,11 +52,11 @@ public class Chapter {
     }
 
     public Date getDatetime() {
-        return datetime;
+        return createTime;
     }
 
     public void setDatetime(Date datetime) {
-        this.datetime = datetime;
+        this.createTime = datetime;
     }
 
     public Episode getEpisode() {
@@ -74,7 +74,7 @@ public class Chapter {
                 ", videoId=" + videoId +
                 ", title='" + title + '\'' +
                 ", ordered=" + ordered +
-                ", datetime=" + datetime +
+                ", datetime=" + createTime +
                 ", episode=" + episode +
                 '}';
     }

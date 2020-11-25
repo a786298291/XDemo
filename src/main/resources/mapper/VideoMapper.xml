@@ -4,6 +4,80 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="cool.suzi.demo.dao.VideoDao">
     <select id="findById" resultType="Video">
-        select * from video where id = #{video_id}
+    /*private int id;
+    private String title;
+    private String summary;
+    private String coverImg;
+    private int price;
+    private Date createTime;
+    private int cid;
+    private  double point;
+    private Chapter chapter;*/
+        select id,title,summary,cover_img,price,create_time,point from video where id = #{video_id}
     </select>
+    <select id="listVideoBanner" resultType="VideoBanner">
+    /* private Integer id;
+    private String url;
+    private String img;
+    private Date createTime;
+    private Integer weight;*/
+        select id,url,img,create_time,weight from video_banner order by weight
+    </select>
+    <select id="listVideo" resultMap="listVideoMap">
+        SELECT v.id,v.title,v.summary,v.cover_img,v.price,v.create_time,v.point,
+        c.id AS cid , c.title AS ctitle,c.ordered,c.create_time AS ccreate_time,
+        e.id AS eid,e.`title` AS etitle,e.`num`,e.`ordered` AS eordered,e.`play_url`,e.`free`,e.`video_id`,e.`create_time` AS ecreate_time
+        FROM video AS v
+        LEFT JOIN chapter AS c
+        ON v.id = c.video_id
+        LEFT JOIN episode AS e
+        ON c.id=e.`chapter_id`
+    </select>
+    <resultMap id="listVideoMap" type="Video">
+        <!--private int id;
+        private String title;
+        private String summary;
+        private String coverImg;
+        private int price;
+        private Date createTime;
+        private int cid;
+        private  double point;
+        private Chapter chapter;-->
+        <id column="id" property="id" jdbcType="INTEGER"/>
+        <result column="title" property="title" jdbcType="VARCHAR"/>
+        <result column="summary" property="summary" jdbcType="VARCHAR"/>
+        <result column="cover_img" property="coverImg" jdbcType="VARCHAR"/>
+        <result column="price" property="price" jdbcType="INTEGER"/>
+        <result column="create_time" property="createTime" jdbcType="TIMESTAMP"/>
+        <result column="point" property="point" jdbcType="DOUBLE"/>
+        <collection property="chapter" ofType="Chapter">
+          <!--private Integer id;
+            private Integer videoId;
+            private String title;
+            private Integer ordered; //订单数量
+            private Date datetime;  //创建时间
+            private Episode episode;-->
+            <id column="cid" property="id"  jdbcType="INTEGER"/>
+            <result column="ctitle" property="title"  jdbcType="VARCHAR"/>
+            <result column="ordered" property="ordered"  jdbcType="INTEGER"/>
+            <result column="ccreate_time" property="createTime" jdbcType="TIMESTAMP"/>
+            <collection property="episode" ofType="Episode">
+<!--                private Integer id;
+                private  String title;
+                private  Integer num;
+                private Integer ordered;
+                private String playUrl;
+                private Integer free;
+                private Integer videoId;
+                private String createTime;-->
+                <id column="eid" property="id" javaType="Integer"/>
+                <result column="etitle" property="title"  jdbcType="INTEGER"/>
+                <result column="eordered" property="ordered" javaType="Integer"/>
+                <result column="play_url" property="playUrl"  jdbcType="INTEGER"/>
+                <result column="free" property="free" jdbcType="INTEGER"/>
+                <result column="video_id" property="videoId" jdbcType="INTEGER"/>
+                <result column="ecreate_time" property="createTime" jdbcType="TIMESTAMP"/>
+            </collection>
+        </collection>
+    </resultMap>
 </mapper>
