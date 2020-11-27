@@ -6,6 +6,7 @@ import cool.suzi.demo.util.JsonData;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.util.StringUtils;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.HashMap;
@@ -29,5 +30,12 @@ public class UserController {
             return token != null ? JsonData.buildSuccess(token):JsonData.buildError("账号密码错误");
 
         }
+    }
+    @RequestMapping("/register")
+    public JsonData register(@RequestParam Map<String,String> userInfo){
+        if (userInfo.containsKey("username") && userInfo.containsKey("password") && userInfo.containsKey("phone")){
+
+        }
+        return JsonData.buildSuccess("OK");
     }
 }

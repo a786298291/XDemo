@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cool.suzi.demo.dao.UserDao">
+<!--    private Integer id;
+    private String name;
+    private String password;
+    private Date createTime;
+    private String token;
+    private String headImg;
+    private String phone;-->
+    <insert id="save" parameterType="User">
+        INSERT INTO USER (NAME,pwd,head_img,phone,create_time) VALUES ("#{name}","#{password}","#{headImg}","#{phone}","#{createTime}");
+    </insert>
+
+</mapper>
