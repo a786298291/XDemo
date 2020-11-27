@@ -3,6 +3,7 @@ package cool.suzi.demo.util;
 import java.security.MessageDigest;
 
 public class CommonUtil {
+
     public static String MD5(String data) {
         try {
             java.security.MessageDigest md =

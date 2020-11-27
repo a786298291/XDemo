@@ -11,7 +11,7 @@
     private String headImg;
     private String phone;-->
     <insert id="save" parameterType="User">
-        INSERT INTO USER (NAME,pwd,head_img,phone,create_time) VALUES ("#{name}","#{password}","#{headImg}","#{phone}","#{createTime}");
+        INSERT INTO user(name,pwd,head_img,phone,create_time) VALUES(#{name},#{password},#{headImg},#{phone},#{createTime});
     </insert>
 
 </mapper>

@@ -15,6 +15,6 @@ public interface UserDao {
      * @param user
      * @return
      */
-    public Integer save(@Param("user") User user);
+    public Integer save(User user);
 
 }
