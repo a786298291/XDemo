@@ -1,4 +1,4 @@
-package cool.suzi.demo.domain;
+package cool.suzi.demo.model.entity;
 
 /**
  *  -节-

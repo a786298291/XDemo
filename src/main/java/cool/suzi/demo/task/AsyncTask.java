@@ -1,6 +1,6 @@
 package cool.suzi.demo.task;
 
-import cool.suzi.demo.domain.User;
+import cool.suzi.demo.model.entity.User;
 import org.springframework.scheduling.annotation.Async;
 import org.springframework.scheduling.annotation.AsyncResult;
 import org.springframework.stereotype.Component;

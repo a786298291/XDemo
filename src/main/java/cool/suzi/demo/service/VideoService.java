@@ -1,7 +1,7 @@
 package cool.suzi.demo.service;
 
-import cool.suzi.demo.domain.Video;
-import cool.suzi.demo.domain.VideoBanner;
+import cool.suzi.demo.model.entity.Video;
+import cool.suzi.demo.model.entity.VideoBanner;
 
 import java.util.List;
 

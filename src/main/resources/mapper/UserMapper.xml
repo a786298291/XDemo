@@ -13,5 +13,8 @@
     <insert id="save" parameterType="User">
         INSERT INTO user(name,pwd,head_img,phone,create_time) VALUES(#{name},#{password},#{headImg},#{phone},#{createTime});
     </insert>
+    <select id="findPhoneAndPwd" resultType="User" >
+        select * from user where phone=#{phone} and pwd=#{password};
+    </select>
 
 </mapper>

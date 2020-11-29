@@ -1,12 +1,8 @@
 package cool.suzi.demo.dao;
 
-import cool.suzi.demo.domain.User;
-import cool.suzi.demo.domain.Video;
-import cool.suzi.demo.domain.VideoBanner;
+import cool.suzi.demo.model.entity.User;
 import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Repository;
-
-import java.util.List;
 
 @Repository
 public interface UserDao {
@@ -16,5 +12,13 @@ public interface UserDao {
      * @return
      */
     public Integer save(User user);
+
+    /**
+     * 用户登录查询，根据手机号和密码查询
+     * @param phone
+     * @param password
+     * @return
+     */
+    public User findPhoneAndPwd(@Param("phone") String phone,@Param("password") String password);
 
 }

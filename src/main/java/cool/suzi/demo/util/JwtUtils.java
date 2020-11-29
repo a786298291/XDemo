@@ -1,6 +1,6 @@
 package cool.suzi.demo.util;
 
-import cool.suzi.demo.domain.User;
+import cool.suzi.demo.model.entity.User;
 import io.jsonwebtoken.*;
 
 import java.util.Date;
@@ -30,6 +30,7 @@ public class JwtUtils {
                 claim("Head_img", user.getHead_img()).
                 claim("id", user.getId()).
                 claim("name", user.getName()).
+                claim("phone", user.getPhone()).
                 setIssuedAt(new Date()).
                 setExpiration(new Date(System.currentTimeMillis() + EXPIRE)).
                 signWith(SignatureAlgorithm.HS256, SECRET).compact();

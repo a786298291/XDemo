@@ -1,19 +1,10 @@
 package cool.suzi.demo;
 
-import cool.suzi.demo.dao.VideoDao;
-import cool.suzi.demo.domain.Video;
-import org.apache.ibatis.io.Resources;
-import org.apache.ibatis.session.SqlSession;
-import org.apache.ibatis.session.SqlSessionFactory;
-import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.web.servlet.ServletComponentScan;
 import org.springframework.scheduling.annotation.EnableScheduling;
-
-import java.io.IOException;
-import java.io.InputStream;
 
 @SpringBootApplication
 @ServletComponentScan

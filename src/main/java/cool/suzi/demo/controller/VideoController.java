@@ -1,7 +1,7 @@
 package cool.suzi.demo.controller;
 
-import cool.suzi.demo.domain.Video;
-import cool.suzi.demo.domain.VideoBanner;
+import cool.suzi.demo.model.entity.Video;
+import cool.suzi.demo.model.entity.VideoBanner;
 import cool.suzi.demo.service.VideoService;
 import cool.suzi.demo.util.JsonData;
 import org.springframework.beans.factory.annotation.Autowired;

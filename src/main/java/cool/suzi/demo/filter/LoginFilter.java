@@ -1,15 +1,12 @@
 package cool.suzi.demo.filter;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import cool.suzi.demo.controller.UserController;
-import cool.suzi.demo.domain.User;
-import cool.suzi.demo.service.LoginService;
+import cool.suzi.demo.model.entity.User;
 import cool.suzi.demo.service.impl.LoginServiceImpl;
 import cool.suzi.demo.util.JsonData;
 import org.springframework.util.StringUtils;
 
 import javax.servlet.*;
-import javax.servlet.annotation.WebFilter;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;

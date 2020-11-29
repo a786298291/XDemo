@@ -1,6 +1,6 @@
 package cool.suzi.demo.service.impl;
 
-import cool.suzi.demo.domain.User;
+import cool.suzi.demo.model.entity.User;
 import cool.suzi.demo.service.LoginService;
 import org.springframework.stereotype.Service;
 

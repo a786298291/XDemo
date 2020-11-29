@@ -1,6 +1,4 @@
-package cool.suzi.demo.domain;
-
-import org.springframework.util.StringUtils;
+package cool.suzi.demo.model.entity;
 
 import java.util.Date;
 import java.util.List;
